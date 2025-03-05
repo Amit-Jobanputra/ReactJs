@@ -14,18 +14,19 @@ export const Contact = () => {
             "Let’s connect—your next great idea might just start here!"
           </h2>
           <div className="justify-content-center flex text-white p-15">
-          <div className="bg-gray-900 p-6 text-justify text-3xl mr-5 rounded-3xl w-150 h-auto">
-                            <div>       
-                            <h1>E-mail :- 
-                            amit.jobanputra75@gmail.com</h1>
-                            </div>
-                            <div>
-                            <h1>Phone :- 9408417575</h1>
-                            </div>
-                            <div>
-                             <h3>Address :-
-                                Riya Road ,Rameshwar Park Street no:-2 ,Near Roshan Banglow</h3> 
-                            </div>
+            <div className="bg-gray-900 p-6 text-justify text-3xl mr-5 rounded-3xl w-150 h-auto">
+              <div>
+                <h1>E-mail :- amit.jobanputra75@gmail.com</h1>
+              </div>
+              <div>
+                <h1>Phone :- 9408417575</h1>
+              </div>
+              <div>
+                <h3>
+                  Address :- Riya Road ,Rameshwar Park Street no:-2 ,Near Roshan
+                  Banglow
+                </h3>
+              </div>
             </div>
             <div className="bg-gray-900 p-6 text-justify text-3xl mr-5 rounded-3xl w-152 h-auto">
               <div>
@@ -60,7 +61,6 @@ export const Contact = () => {
                   placeholder="Enter YourMessage"
                 />
               </div>
-
             </div>
           </div>
         </div>
