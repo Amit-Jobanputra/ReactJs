@@ -20,7 +20,7 @@ function Amit() {
               <a className="text-white hover:text-red-500 transition duration-300" href="#">Service</a>
             </li>
             <li>
-              <a className="text-white hover:text-red-500 transition duration-300" href="#">Contact</a>
+              <a className="text-white hover:text-red-500 transition duration-300" href="#Contact">Contact</a>
             </li>
           </ul>
         </div>

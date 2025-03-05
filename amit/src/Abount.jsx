@@ -18,11 +18,11 @@ export const About = () => {
                             <h1>Phone :- 9408417575</h1>
                         </div>
                         <div className="bg-gray-900 p-6 text-justify text-2xl mr-5 rounded-3xl w-145 h-auto">
-                            <h1>Name :- Amit Jobaputra</h1>
-                            <h1>Age :- 21</h1>
-                            <h1>Location :- Rajkot</h1> 
-                            <h1>E-mail :- amit.jobanputra75@gmail.com</h1>
-                            <h1>Phone :- 9408417575</h1>
+                            <h1>Degree :- Bachelor In Computra Application</h1>
+                            <h1>Persentage :- 83.11 </h1>
+                            <h1>University :- Bhakta Kavi Narsinh Mehta</h1> 
+                            <h1>College :- Shri V. J. Modha College of Information Technology</h1>
+                            <h1>City :- Porbandar</h1>
                         </div>
                     </div>
                 </div>
