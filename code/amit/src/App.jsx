@@ -3,15 +3,16 @@ import Home from './Home.jsx'
 import {Component } from './Component.jsx'
 import { About } from './Abount.jsx'
 import { Contact } from './Contact.jsx'
+import { LiveExample } from './LiveExample.jsx'
 function App() {
   return (
     <>  
-   <Amit/> 
+   {/* <Amit/> 
    <Home />
    <About />
    <Contact />
-    {/* <Component/> */}
-  
+    <Component/> */}
+  <LiveExample/>
    
     </>
   )
