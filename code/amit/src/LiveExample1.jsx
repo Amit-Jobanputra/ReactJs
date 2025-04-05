@@ -1,19 +1,9 @@
 import React from "react";
 import { useState } from "react";
-export const LiveExample = () => {
-  const [profile, setProfile] = useState({});
+export const LiveExample1 = () => {
+  const [profile, setProfile] = useState("");
   function handleChange(event) {
-    console.log(event.target.value);
-    // setName(event.target.value);
-    if (event.target.name === "FirstName") {
-        setProfile({
-            ...profile, "FirstName": event.target.value })
-        }
-    else if (event.target.name === "LastName") {
-      setProfile({
-        ...profile, "LastName": event.target.value })
-    }
-
+    setProfile({...profile, [event.target.name]: event.target.value });
   }
   return (
     <>
@@ -40,6 +30,17 @@ export const LiveExample = () => {
             />
           </div>
           <div>
+            <label className="text-xl">Your FatherName:- </label>
+            <input
+              type="text"
+              placeholder="Enter Your FatherName"
+              onChange={(e) => {
+                handleChange(e);
+              }}
+              name="FatherName"
+            />
+          </div>
+          <div>
             <label className="text-xl">Your LastName:- </label>
             <input
               type="text"
@@ -63,7 +64,7 @@ export const LiveExample = () => {
           }}
         >
           <label className="text-xl">
-            Your Name:-{`${profile.FirstName!=undefined?profile.FirstName:""} ${profile.LastName!=undefined?profile.LastName:""}`}{" "}
+          Your Name:-{`${profile.FirstName!=undefined?profile.FirstName:""} ${profile.FatherName!=undefined?profile.FatherName:""} ${profile.LastName!=undefined?profile.LastName:""}`}{" "}
           </label>
         </div>
       </div>

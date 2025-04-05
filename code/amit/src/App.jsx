@@ -3,6 +3,7 @@ import Home from './Home.jsx'
 import {Component } from './Component.jsx'
 import { About } from './Abount.jsx'
 import { Contact } from './Contact.jsx'
+import { LiveExample1 } from './LiveExample1.jsx'
 import { LiveExample } from './LiveExample.jsx'
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
    <About />
    <Contact />
     <Component/> */}
-  <LiveExample/>
-   
+   {/* <LiveExample/> */}
+   <LiveExample1/>
     </>
   )
 }
