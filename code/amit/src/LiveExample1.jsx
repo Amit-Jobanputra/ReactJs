@@ -5,6 +5,21 @@ export const LiveExample1 = () => {
   function handleChange(event) {
     setProfile({...profile, [event.target.name]: event.target.value });
   }
+  async function datasubmit(data){
+    const response = await fetch("http://127.0.0.1:8000/api/test",{method:"POST",body:JSON.stringify(data),headers:{
+      "Content-Type":"application/json",
+    },
+  })
+  .then((response) => {
+    return response.json();
+  })
+  .then((rdata) => {
+    console.log(rdata);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+}
   return (
     <>
       <div style={{ height: "100vh", display: "flex" }}>
@@ -49,6 +64,18 @@ export const LiveExample1 = () => {
                 handleChange(e);
               }}
               name="LastName"
+            />
+          </div>
+          <div>
+            <input
+              type="submit"
+              value="Submit"
+              placeholder="Enter Your Name"
+              onClick={()=> {
+                datasubmit(profile);
+              }}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              name="Submit"
             />
           </div>
         </div>
