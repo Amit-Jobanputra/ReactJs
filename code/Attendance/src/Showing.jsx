@@ -54,7 +54,7 @@ export const Showing = () => {
           <thead className="bg-gray-100">
             <tr>
               <th className="border px-4 py-2">ID</th>
-              <th className="border px-4 py-2">First Name</th>
+              <th className="border px-4 py-2">Student Id</th>
               <th className="border px-4 py-2">Last Name</th>
               <th className="border px-4 py-2">City</th>
               <th className="border px-4 py-2">Mobile</th>
@@ -99,7 +99,7 @@ export const Showing = () => {
               <strong>ID:</strong> {selectedGrade.id}
             </p>
             <p>
-              <strong>First Name:</strong> {selectedGrade.FirstName}
+              <strong>Student Id:</strong> {selectedGrade.FirstName}
             </p>
             <p>
               <strong>Last Name:</strong> {selectedGrade.LastName}

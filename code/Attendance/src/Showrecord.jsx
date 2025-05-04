@@ -93,16 +93,16 @@ export const Showrecord = ()=>{
                   <strong>ID:</strong> {selectedGrade.Id}
                 </p>
                 <p>
-                  <strong>First Name:</strong> {selectedGrade.student_id}
+                  <strong>Student Id:</strong> {selectedGrade.student_id}
                 </p>
                 <p>
-                  <strong>Last Name:</strong> {selectedGrade.course_id}
+                  <strong>Course Id:</strong> {selectedGrade.course_id}
                 </p>
                 <p>
-                  <strong>City:</strong> {selectedGrade.date}
+                  <strong>Date:</strong> {selectedGrade.date}
                 </p>
                 <p>
-                  <strong>Mobile:</strong> {selectedGrade.status}
+                  <strong>Status:</strong> {selectedGrade.status}
                 </p>
               </div>
             )
