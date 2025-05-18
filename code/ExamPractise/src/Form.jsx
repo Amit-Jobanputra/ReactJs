@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Form.css";
 import { Display } from "./Display";
+import { Edit } from "./Edit";
 
 export const Form = () => {
   const [user, setUser] = useState({
@@ -12,13 +13,14 @@ export const Form = () => {
   const [get, setget] = useState([]);
   //  console.log(get);
   const [selectedRcored, setSelectedRcored] = useState();
+  const [selectedcheck, setSelectedCheck] = useState(null);
   function handleChange(event) {
     setUser({ ...user, [event.target.name]: event.target.value });
   }
 
   const checkDisplay = async (e) => {
     e.preventDefault();
-    var res = await fetch("http://127.0.0.1:8000/api/exam", {
+     await fetch("http://127.0.0.1:8000/api/exam", {
       method: "post",
       headers: {
         "Content-type": "application/json",
@@ -27,13 +29,14 @@ export const Form = () => {
     })
       .then((Response) => {
         alert("✅ Attendance submitted successfully!");
+        handleSelect();
         return Response.json();
       })
       .catch((error) => {
         console.log("Error : ", error);
       });
   };
-  const handleSelect =()=>{
+  const handleSelect = () => {
     fetch("http://127.0.0.1:8000/api/record")
       .then((res) => res.json())
       .then((data) => {
@@ -44,7 +47,7 @@ export const Form = () => {
       .catch((error) => {
         console.error("Error :", error);
       });
-  }
+  };
   useEffect(() => {
     handleSelect();
   }, []);
@@ -55,6 +58,20 @@ export const Form = () => {
       .then((data) => {
         if (data.code === 200) {
           setSelectedRcored(data.data);
+          // setSelectedCheck(data.data);
+        }
+      })
+      .catch((error) => {
+        console.log("error:", error);
+      });
+  };
+  const handleEdit = (id) => {
+    fetch(`http://127.0.0.1:8000/api/onerecord/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.code === 200) {
+          setSelectedRcored(data.data);
+          setSelectedCheck(data.data);
         }
       })
       .catch((error) => {
@@ -66,15 +83,14 @@ export const Form = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.code === 200) {
-            alert("✅ Attendance submitted successfully!");
-            handleSelect();
+          alert("✅ Attendance submitted successfully!");
+          handleSelect();
         }
       })
       .catch((error) => {
         console.log("error:", error);
       });
   };
-
 
   return (
     <>
@@ -181,15 +197,26 @@ export const Form = () => {
                   >
                     Delete
                   </button>
+                  <button
+                    className="bg-red-500 text-white px-3 py-1 ml-2 rounded hover:bg-red-700"
+                    onClick={() => handleEdit(re.id)}
+                  >
+                    Edit
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-<Display usersInfo={selectedRcored} />           
-        
+        <Display usersInfo={selectedRcored} />
+        {selectedcheck?(
+
+          <Edit editInfo={selectedRcored} fun={handleSelect} />
+        ):(
+          "please select records "
+        )
+        }
       </div>
-      
     </>
   );
 };
